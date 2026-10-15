@@ -153,7 +153,7 @@
 				>
 			</li>
 			<li>
-				<button
+				<!-- <button
 					class="text-graphite uppercase transition-colors duration-300 hover:text-ink"
 					onclick={() => {
 						menuOpen = false;
@@ -161,7 +161,7 @@
 					}}
 				>
 					{t('nav.download')}
-				</button>
+				</button> -->
 			</li>
 		</ul>
 	</div>

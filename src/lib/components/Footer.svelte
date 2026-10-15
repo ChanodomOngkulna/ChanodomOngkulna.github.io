@@ -10,7 +10,7 @@
 		class="mx-auto flex max-w-container-max flex-col items-center justify-between gap-6 px-margin-mobile md:flex-row md:px-margin-desktop"
 	>
 		<div class="mb-4 font-body-md text-body-md font-bold tracking-[0.14em] text-ink md:mb-0">
-			BlackglassesDev
+			ChanodomOngkulna
 		</div>
 		<div class="mb-4 text-center text-[10px] text-graphite md:mb-0 md:text-left">
 			{t('footer.rights')}
@@ -19,21 +19,26 @@
 			<li>
 				<a
 					class="text-graphite transition-colors duration-300 hover:text-accent"
-					href="https://github.com/BlackglassesDev"
+					href="https://github.com/ChanodomOngkulna"
 					target="_blank"
 					rel="noreferrer">GitHub</a
 				>
 			</li>
 			<!-- svelte-ignore a11y_invalid_attribute -->
 			<li>
-				<a class="text-graphite transition-colors duration-300 hover:text-accent" href="#"
+				<a
+					class="text-graphite transition-colors duration-300 hover:text-accent"
+					href="https://www.facebook.com/chanodom.ongkulna/"
+					target="_blank"
 					>Facebook</a
 				>
 			</li>
 			<!-- svelte-ignore a11y_invalid_attribute -->
 			<li>
-				<a class="text-graphite transition-colors duration-300 hover:text-accent" href="#"
-					>Instagram</a
+				<a
+					class="text-graphite transition-colors duration-300 hover:text-accent"
+					href="https://www.instagram.com/pongkulna/"
+					target="_blank">Instagram</a
 				>
 			</li>
 		</ul>

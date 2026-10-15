@@ -23,7 +23,7 @@ export const projects = [
 		},
 		image: '/img/quizLabAws.png',
 		alt: 'Quiz-lab-AWS project interface',
-		tags: ['SvelteKit'],
+		tags: ['SvelteKit','Tailwind CSS','Static Web','Use Local Storage'],
 		status: 'done',
 		featured: true,
 		github: 'https://github.com/ChanodomOngkulna/Quiz-lab-AWS.git',

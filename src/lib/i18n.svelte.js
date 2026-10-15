@@ -1,6 +1,6 @@
 const dictionaries = {
 	th: {
-		'meta.title': 'Chanodom Ongkulna · BlackglassesDev',
+		'meta.title': 'Chanodom Ongkulna',
 		'nav.home': 'หน้าแรก',
 		'nav.about': 'เกี่ยวกับ',
 		'nav.works': 'ผลงาน',
@@ -32,10 +32,10 @@ const dictionaries = {
 		'modal.download': 'ดาวน์โหลด',
 		'card.github': 'ดูโค้ดบน GitHub',
 		'card.demo': 'เปิดเว็บไซต์ผลงาน',
-		'footer.rights': '© 2026 BlackglassesDev สงวนลิขสิทธิ์'
+		'footer.rights': '© 2026 ChanodomOngkulna สงวนลิขสิทธิ์'
 	},
 	en: {
-		'meta.title': 'Chanodom Ongkulna · BlackglassesDev',
+		'meta.title': 'Chanodom Ongkulna',
 		'nav.home': 'Home',
 		'nav.about': 'About',
 		'nav.works': 'Works',
@@ -67,7 +67,7 @@ const dictionaries = {
 		'modal.download': 'Download',
 		'card.github': 'View source on GitHub',
 		'card.demo': 'Open project website',
-		'footer.rights': '© 2026 BlackglassesDev. All rights reserved.'
+		'footer.rights': '© 2026 ChanodomOngkulna. All rights reserved.'
 	}
 };
 
