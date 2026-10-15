@@ -1,1 +1,0 @@
-var e=``+new URL(`../assets/skillMappingRMUTL.CoBZY5YY.png`,import.meta.url).href;export{e as t};

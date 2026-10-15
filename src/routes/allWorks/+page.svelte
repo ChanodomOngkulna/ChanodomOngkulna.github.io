@@ -1,179 +1,40 @@
 <script>
-	import skmRMUTL from '$lib/assets/skillMappingRMUTL.png';
-	import logo_bg from '$lib/assets/logo-removebg.png';
+	import { reveal } from '$lib/actions/reveal.js';
+	import { t } from '$lib/i18n.svelte.js';
+	import ProjectCard from '$lib/components/ProjectCard.svelte';
+	import { projects } from '$lib/data/projects.js';
+	import logoBg from '$lib/assets/logo-removebg.png';
 </script>
 
 <main class="pt-[140px] md:pt-[180px]">
 	<div
 		class="mx-auto w-full max-w-container-max px-margin-mobile pb-section-gap md:px-margin-desktop"
 	>
-		<!-- Header Section -->
-		<header class="mt-12 mb-16 md:mt-24 md:mb-24">
+		<header use:reveal class="mt-12 mb-16 md:mt-24 md:mb-24">
 			<h1
-				class="mb-6 font-display-lg-mobile text-display-lg-mobile text-primary md:font-display-lg md:text-display-lg"
+				class="mb-6 font-display-lg-mobile text-display-lg-mobile text-ink md:font-display-lg md:text-display-lg"
 			>
-				Chanodom Ongkulna
+				{t('allworks.heading')}
 			</h1>
-			<p class="max-w-2xl font-body-lg text-body-lg text-on-surface-variant">
-				This is a piece of work I've done and am proud to present.
+			<p class="max-w-2xl font-body-lg text-body-lg text-graphite">
+				{t('allworks.intro')}
 			</p>
 		</header>
 
-		<!-- Portfolio Grid (Bento/Asymmetric Style) -->
 		<div class="grid grid-cols-1 gap-gutter md:grid-cols-12">
-			<!-- Project 1 (Large Span) -->
+			{#each projects as project, index (project.slug)}
+				<ProjectCard {project} {index} />
+			{/each}
 			<article
-				class="glass-panel group flex cursor-pointer flex-col overflow-hidden rounded-2xl md:col-span-8"
+				use:reveal={{ delay: 120 }}
+				class="work-card flex min-h-[280px] flex-col items-center justify-center gap-4 p-10 text-center md:col-span-4"
 			>
-				<div class="relative h-80 w-full overflow-hidden md:h-[500px]">
-					<img
-						class="portfolio-card-img h-full w-full object-cover"
-						alt="img project RMUTL-SkillMapping."
-						src={skmRMUTL}
-					/>
-				</div>
-				<div class="flex flex-grow flex-col justify-between p-8">
-					<div>
-						<h2
-							class="mb-4 font-headline-md text-headline-md text-primary transition-all group-hover:text-glow-silver"
-						>
-							RMUTL-SkillMapping
-						</h2>
-						<p class="mb-6 line-clamp-2 font-body-md text-on-surface-variant">
-							Project skill mapping.
-						</p>
-					</div>
-					<div class="mt-4 flex flex-wrap gap-2">
-						<span
-							class="inline-block rounded-full border border-white/20 bg-[#050505] px-4 py-1.5 font-label-caps text-[10px] tracking-[0.2em] text-on-surface uppercase"
-							>SvelteKit</span
-						>
-						<span
-							class="inline-block rounded-full border border-white/20 bg-[#050505] px-4 py-1.5 font-label-caps text-[10px] tracking-[0.2em] text-on-surface uppercase"
-							>Node.js</span
-						>
-						<span
-							class="inline-block rounded-full border border-white/20 bg-[#050505] px-4 py-1.5 font-label-caps text-[10px] tracking-[0.2em] text-on-surface uppercase"
-							>Tailwind CSS</span
-						>
-						<span
-							class="inline-block rounded-full border border-white/20 bg-[#050505] px-4 py-1.5 font-label-caps text-[10px] tracking-[0.2em] text-on-surface uppercase"
-							>Docker</span
-						>
-						<span
-							class="inline-block rounded-full border border-white/20 bg-[#050505] px-4 py-1.5 font-label-caps text-[10px] tracking-[0.2em] text-on-surface uppercase"
-							>Mysql</span
-						>
-					</div>
-				</div>
+				<img src={logoBg} alt="" class="h-20 w-20 opacity-80 invert" />
+				<h2 class="font-headline-sm text-headline-sm text-ink">{t('works.empty.title')}</h2>
+				<p class="max-w-64 font-body-md text-body-md text-graphite">
+					{t('works.empty.desc')}
+				</p>
 			</article>
-
-			<!-- Project 2 (Small Span) -->
-			<article
-				class="glass-panel group flex cursor-pointer flex-col overflow-hidden rounded-2xl md:col-span-4"
-			>
-				<div class="relative h-full w-full overflow-hidden md:h-[400px]">
-					<img
-						class="portfolio-card-img h-full w-full object-cover grayscale transition-all duration-700 hover:grayscale-0"
-						alt="logo BlackglassesDev"
-						src={logo_bg}
-					/>
-				</div>
-				<div class="flex flex-grow flex-col justify-between p-6">
-					<div>
-						<h2
-							class="mb-3 font-headline-sm text-headline-sm text-primary transition-all group-hover:text-glow-silver"
-						>
-							Coming soon...
-						</h2>
-						<p class="mb-6 line-clamp-3 font-body-md text-on-surface-variant">Nothing yet.</p>
-					</div>
-					<div class="mt-4 flex flex-wrap gap-2">
-						<span
-							class="inline-block rounded-full border border-white/20 bg-[#050505] px-4 py-1.5 font-label-caps text-[10px] tracking-[0.2em] text-on-surface uppercase"
-							>NULL</span
-						>
-						<span
-							class="inline-block rounded-full border border-white/20 bg-[#050505] px-4 py-1.5 font-label-caps text-[10px] tracking-[0.2em] text-on-surface uppercase"
-							>NULL</span
-						>
-					</div>
-				</div>
-			</article>
-			<!-- <article
-				class="glass-panel group flex cursor-pointer flex-col overflow-hidden rounded-2xl md:col-span-5"
-			>
-				<div class="relative h-64 w-full overflow-hidden md:h-[350px]">
-					<img
-						class="portfolio-card-img h-full w-full object-cover grayscale transition-all duration-700 hover:grayscale-0"
-						alt="A fintech dashboard interface for Equinox Wealth, premium dark and highly legible, with sharp geometric charts and silver line work on deep black."
-						src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFJzX3naztVDSjgfpkzURi15n6sX-Q1zfZkXHqjLkuB2gHxb054NiR59hEpHVU_VaD9NEj3HZ9pFcIljQnf-fZucraJFf-fVSScTagCQJbJ9szC4NnFcIFL9MGelb6T5ByGuG8ARLMxvMuy4bDz-3qxxtmgk9HI_JaRIxqeSJOUEuMFXmvXvv4JdQypHLK9CEOrUe2TYkGW8Z-iqflj1mscDR8iKl6AfO556UqYDX0tfG9gBoSsqbtDA"
-					/>
-				</div>
-				<div class="flex flex-grow flex-col justify-between p-6">
-					<div>
-						<h2
-							class="mb-3 font-headline-sm text-headline-sm text-primary transition-all group-hover:text-glow-silver"
-						>
-							Equinox Wealth
-						</h2>
-						<p class="mb-6 line-clamp-3 font-body-md text-on-surface-variant">
-							A private wealth management portal delivering complex financial data through a
-							refined, minimalist lens.
-						</p>
-					</div>
-					<div class="mt-4 flex flex-wrap gap-2">
-						<span
-							class="inline-block rounded-full border border-white/20 bg-[#050505] px-4 py-1.5 font-label-caps text-[10px] tracking-[0.2em] text-on-surface uppercase"
-							>Vue.js</span
-						>
-						<span
-							class="inline-block rounded-full border border-white/20 bg-[#050505] px-4 py-1.5 font-label-caps text-[10px] tracking-[0.2em] text-on-surface uppercase"
-							>D3.js</span
-						>
-					</div>
-				</div>
-			</article>
-
-			
-			<article
-				class="glass-panel group flex cursor-pointer flex-col overflow-hidden rounded-2xl md:col-span-7"
-			>
-				<div class="relative h-80 w-full overflow-hidden md:h-[450px]">
-					<img
-						class="portfolio-card-img h-full w-full object-cover grayscale transition-all duration-700 hover:grayscale-0"
-						alt="An avant-garde digital art gallery experience relying on typography and negative space, with large Bodoni serif text above abstract silver geometric shapes."
-						src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1kJkUqXiAiXzXw8YYqta4h3AmVajEfDLV4od2s1uSCvaY8Te4Qr9fuLiskJaZG_IFnEsAPrW2Chzj87bEQ8qRhXA97-JDDHym464XikE48fuFMLItu-JW2vpHUtocZ9WUEdwE6HRUqIYQqoBJYWx0uk9mTJWtTITM6fQDgFb0F3DvWQVqtgneULNRcAa5TxZUtOwZ2zMFZ44Zd5Pp7Z-qwop94MA87PAzuP-r-sVMxJuBLMPaSqgFvQ"
-					/>
-				</div>
-				<div class="flex flex-grow flex-col justify-between p-8">
-					<div>
-						<h2
-							class="mb-4 font-headline-md text-headline-md text-primary transition-all group-hover:text-glow-silver"
-						>
-							Galerie Noir
-						</h2>
-						<p class="mb-6 line-clamp-2 font-body-md text-on-surface-variant">
-							A conceptual digital exhibition space designed to prioritize the artwork, utilizing
-							generative shaders and precise typography.
-						</p>
-					</div>
-					<div class="mt-4 flex flex-wrap gap-2">
-						<span
-							class="inline-block rounded-full border border-white/20 bg-[#050505] px-4 py-1.5 font-label-caps text-[10px] tracking-[0.2em] text-on-surface uppercase"
-							>WebGL</span
-						>
-						<span
-							class="inline-block rounded-full border border-white/20 bg-[#050505] px-4 py-1.5 font-label-caps text-[10px] tracking-[0.2em] text-on-surface uppercase"
-							>GSAP</span
-						>
-						<span
-							class="inline-block rounded-full border border-white/20 bg-[#050505] px-4 py-1.5 font-label-caps text-[10px] tracking-[0.2em] text-on-surface uppercase"
-							>Next.js</span
-						>
-					</div>
-				</div>
-			</article> -->
 		</div>
 	</div>
 </main>

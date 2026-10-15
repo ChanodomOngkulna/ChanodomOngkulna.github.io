@@ -1,0 +1,94 @@
+const dictionaries = {
+	th: {
+		'meta.title': 'Chanodom Ongkulna · BlackglassesDev',
+		'nav.home': 'หน้าแรก',
+		'nav.about': 'เกี่ยวกับ',
+		'nav.works': 'ผลงาน',
+		'nav.contact': 'ติดต่อ',
+		'nav.download': 'ดาวน์โหลด',
+		'nav.toggleLang': 'เปลี่ยนภาษา',
+		'nav.toggleMenu': 'เปิดหรือปิดเมนู',
+		'hero.quote': 'ถ้ารู้สึกว่าเหนื่อย นั่นแปลว่ายังอยู่ในช่วงต้นของการเรียนรู้',
+		'hero.intro':
+			'ยินดีต้อนรับสู่พื้นที่ส่วนตัวบนเว็บของผม สร้างด้วย SvelteKit เพื่อทดลองเทคโนโลยีใหม่ ๆ นำเสนอผลงานที่ภูมิใจ และเป็นจุดเชื่อมต่อกับผู้สนใจ ยินดีให้เดินชมผลงานได้เลย',
+		'hero.codename': 'ชื่อในวงการ: BlackglassesDev',
+		'hero.viewWorks': 'ดูผลงาน',
+		'hero.contact': 'ติดต่อผม',
+		'works.heading': 'ผลงานเด่น',
+		'works.all': 'ผลงานทั้งหมด',
+		'works.status.wip': 'กำลังพัฒนา',
+		'works.status.done': 'เสร็จสิ้น',
+		'works.empty.title': 'เร็ว ๆ นี้',
+		'works.empty.desc': 'มีอีกหลายโปรเจคที่กำลังเตรียมนำเสนอ',
+		'allworks.heading': 'ผลงานทั้งหมด',
+		'allworks.intro': 'รวมผลงานที่ผมได้ลงมือทำและภูมิใจนำเสนอ',
+		'modal.title': 'ดาวน์โหลดเอกสาร',
+		'modal.close': 'ปิด',
+		'modal.portfolio': 'พอร์ตโฟลิโอฉบับเต็ม',
+		'modal.portfolioDesc': 'คัดสรรผลงานออกแบบและพัฒนาชิ้นที่ดีที่สุด',
+		'modal.resume': 'เรซูเม่เชิงเทคนิค',
+		'modal.resumeDesc': 'ภาพรวมสกิล ประสบการณ์ และการศึกษา',
+		'modal.download': 'ดาวน์โหลด',
+		'card.github': 'ดูโค้ดบน GitHub',
+		'card.demo': 'เปิดเว็บไซต์ผลงาน',
+		'footer.rights': '© 2026 BlackglassesDev สงวนลิขสิทธิ์'
+	},
+	en: {
+		'meta.title': 'Chanodom Ongkulna · BlackglassesDev',
+		'nav.home': 'Home',
+		'nav.about': 'About',
+		'nav.works': 'Works',
+		'nav.contact': 'Contact',
+		'nav.download': 'Download',
+		'nav.toggleLang': 'Switch language',
+		'nav.toggleMenu': 'Toggle menu',
+		'hero.quote': "If you're exhausted, you're still early in the learning process.",
+		'hero.intro':
+			'Welcome to my personal space on the web. I built this site using SvelteKit to experiment with new technology while highlighting my favorite projects and providing a place to connect. Feel free to explore my work.',
+		'hero.codename': 'Code name: BlackglassesDev',
+		'hero.viewWorks': 'View works',
+		'hero.contact': 'Contact me',
+		'works.heading': 'Featured works',
+		'works.all': 'All projects',
+		'works.status.wip': 'In progress',
+		'works.status.done': 'Completed',
+		'works.empty.title': 'Coming soon',
+		'works.empty.desc': 'More projects are being prepared.',
+		'allworks.heading': 'Selected works',
+		'allworks.intro': "A collection of work I've done and am proud to present.",
+		'modal.title': 'Download documents',
+		'modal.close': 'Close',
+		'modal.portfolio': 'Full portfolio',
+		'modal.portfolioDesc': 'A curated selection of my finest design and development works.',
+		'modal.resume': 'Technical resume',
+		'modal.resumeDesc': 'An overview of my technical stack, experience, and education.',
+		'modal.download': 'Download',
+		'card.github': 'View source on GitHub',
+		'card.demo': 'Open project website',
+		'footer.rights': '© 2026 BlackglassesDev. All rights reserved.'
+	}
+};
+
+export const i18n = $state({ locale: 'th' });
+
+export function t(key) {
+	const table = dictionaries[i18n.locale] ?? dictionaries.th;
+	return table[key] ?? dictionaries.en[key] ?? key;
+}
+
+export function setLocale(locale) {
+	if (!dictionaries[locale]) return;
+	i18n.locale = locale;
+	if (typeof localStorage !== 'undefined') {
+		localStorage.setItem('locale', locale);
+	}
+	if (typeof document !== 'undefined') {
+		document.documentElement.lang = locale;
+	}
+}
+
+export function initLocale() {
+	if (typeof localStorage === 'undefined') return;
+	const saved = localStorage.getItem('locale');
+	if (saved && saved !== i18n.locale) setLocale(saved);
+}
