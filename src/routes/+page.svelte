@@ -40,7 +40,7 @@
 				class="enter mb-4 font-display-lg-mobile text-display-lg-mobile leading-tight tracking-tight text-ink md:font-display-lg md:text-display-lg"
 				style="--enter-delay: 0ms"
 			>
-				Chanodom Ongkulna
+				{t('hero.name')}
 			</h1>
 			<p
 				class="enter mb-6 font-headline-sm text-headline-sm font-light text-graphite md:text-[30px]"
@@ -54,12 +54,12 @@
 			>
 				{t('hero.intro')}
 			</p>
-			<p
+			<!-- <p
 				class="enter mb-12 font-label-caps text-label-caps tracking-[0.14em] text-graphite uppercase"
 				style="--enter-delay: 340ms"
 			>
 				{t('hero.codename')}
-			</p>
+			</p> -->
 			<div
 				class="enter flex flex-col items-start gap-4 sm:flex-row sm:items-center"
 				style="--enter-delay: 440ms"
@@ -119,7 +119,7 @@
 				<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
 			</a>
 		</div>
-		<div class="grid grid-cols-1 gap-gutter md:grid-cols-12">
+		<div class="grid grid-cols-1 gap-gutter md:grid-cols-2">
 			{#each featured as project, index (project.slug)}
 				<ProjectCard {project} {index} heading="h3" />
 			{/each}

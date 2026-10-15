@@ -21,13 +21,13 @@
 			</p>
 		</header>
 
-		<div class="grid grid-cols-1 gap-gutter md:grid-cols-12">
+		<div class="grid grid-cols-1 gap-gutter md:grid-cols-2">
 			{#each projects as project, index (project.slug)}
 				<ProjectCard {project} {index} />
 			{/each}
 			<article
 				use:reveal={{ delay: 120 }}
-				class="work-card flex min-h-[280px] flex-col items-center justify-center gap-4 p-10 text-center md:col-span-4"
+				class="work-card flex min-h-[280px] flex-col items-center justify-center gap-4 p-10 text-center"
 			>
 				<img src={logoBg} alt="" class="h-20 w-20 opacity-80 invert" />
 				<h2 class="font-headline-sm text-headline-sm text-ink">{t('works.empty.title')}</h2>

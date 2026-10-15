@@ -11,6 +11,7 @@ const dictionaries = {
 		'hero.quote': 'ถ้ารู้สึกว่าเหนื่อย นั่นแปลว่ายังอยู่ในช่วงต้นของการเรียนรู้',
 		'hero.intro':
 			'ยินดีต้อนรับสู่พื้นที่ส่วนตัวบนเว็บของผม สร้างด้วย SvelteKit เพื่อทดลองเทคโนโลยีใหม่ ๆ นำเสนอผลงานที่ภูมิใจ และเป็นจุดเชื่อมต่อกับผู้สนใจ ยินดีให้เดินชมผลงานได้เลย',
+		'hero.name': 'ชโนดม อองกุลนะ',
 		'hero.codename': 'ชื่อในวงการ: BlackglassesDev',
 		'hero.viewWorks': 'ดูผลงาน',
 		'hero.contact': 'ติดต่อผม',
@@ -45,6 +46,7 @@ const dictionaries = {
 		'hero.quote': "If you're exhausted, you're still early in the learning process.",
 		'hero.intro':
 			'Welcome to my personal space on the web. I built this site using SvelteKit to experiment with new technology while highlighting my favorite projects and providing a place to connect. Feel free to explore my work.',
+		'hero.name': 'Chanodom Ongkulna',
 		'hero.codename': 'Code name: BlackglassesDev',
 		'hero.viewWorks': 'View works',
 		'hero.contact': 'Contact me',

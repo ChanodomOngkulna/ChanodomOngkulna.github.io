@@ -95,12 +95,12 @@
 				EN
 			</button>
 		</div>
-		<button
+		<!-- <button
 			class="hidden items-center justify-center rounded-full bg-accent px-5 py-2.5 font-label-caps text-label-caps font-semibold tracking-[0.14em] text-white uppercase transition-colors duration-300 hover:bg-accent-strong md:inline-flex"
 			onclick={ondownload}
 		>
 			{t('nav.download')}
-		</button>
+		</button> -->
 		<button
 			class="text-ink md:hidden"
 			aria-expanded={menuOpen}

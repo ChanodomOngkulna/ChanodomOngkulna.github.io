@@ -4,23 +4,11 @@
 
 	let { project, index = 0, heading = 'h2' } = $props();
 
-	const spans = {
-		4: 'md:col-span-4',
-		5: 'md:col-span-5',
-		6: 'md:col-span-6',
-		7: 'md:col-span-7',
-		8: 'md:col-span-8',
-		12: 'md:col-span-12'
-	};
-
 	const description = $derived(project.description[i18n.locale] ?? project.description.en);
 	const statusLabel = $derived(project.status ? t(`works.status.${project.status}`) : null);
 </script>
 
-<article
-	use:reveal={{ delay: (index % 3) * 100 }}
-	class="work-card group flex flex-col {spans[project.span] ?? 'md:col-span-6'}"
->
+<article use:reveal={{ delay: (index % 2) * 100 }} class="work-card group flex flex-col">
 	<div class="relative h-64 w-full overflow-hidden md:h-[380px]">
 		<img class="work-card-img h-full w-full object-cover" alt={project.alt} src={project.image} />
 		{#if statusLabel}
